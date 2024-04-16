@@ -85,6 +85,18 @@ def generate_launch_description():
         )
     )
 
+    py_dome_broad_spawner = Node(
+        package="py_dome",
+        executable="talker",
+        output='screen',
+    )
+
+    py_camera_broad_spawner = Node(
+        package="py_camera",
+        executable="talker",
+        output='screen',
+    )
+
 
     # Code for delaying a node (I haven't tested how effective it is)
     # 
@@ -111,5 +123,7 @@ def generate_launch_description():
         twist_mux,
         delayed_controller_manager,
         delayed_diff_drive_spawner,
-        delayed_joint_broad_spawner
+        delayed_joint_broad_spawner,
+        py_camera_broad_spawner,
+        py_dome_broad_spawner
     ])
